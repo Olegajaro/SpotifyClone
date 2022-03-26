@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .systemBackground
         
         let navigationContoller = UINavigationController(
-            rootViewController: ViewController()
+            rootViewController: TitleBarController()
         )
         window?.rootViewController = navigationContoller
         
