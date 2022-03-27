@@ -20,10 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .spotifyBlack
         
-        let navigationContoller = UINavigationController(
-            rootViewController: TitleBarController()
-        )
-        window?.rootViewController = navigationContoller
+//        let navigationContoller = UINavigationController(
+//            rootViewController: TitleBarController()
+//        )
+//        window?.rootViewController = navigationContoller
+        
+        window?.rootViewController = HomeController()
         
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = .spotifyBlack
