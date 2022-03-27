@@ -12,6 +12,7 @@
 		1073AB7127F057A300D2652C /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073AB7027F057A300D2652C /* UIColor+Extensions.swift */; };
 		1073AB7527F05F1900D2652C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073AB7427F05F1900D2652C /* HomeController.swift */; };
 		1073AB7727F0606000D2652C /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073AB7627F0606000D2652C /* MenuBar.swift */; };
+		1073AB7927F067A600D2652C /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1073AB7827F067A600D2652C /* PlayListCell.swift */; };
 		109D398827EF97AC00BC76D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D398727EF97AC00BC76D9 /* AppDelegate.swift */; };
 		109D398C27EF97AC00BC76D9 /* TitleBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D398B27EF97AC00BC76D9 /* TitleBarController.swift */; };
 		109D399127EF97AC00BC76D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109D399027EF97AC00BC76D9 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		1073AB7027F057A300D2652C /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		1073AB7427F05F1900D2652C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		1073AB7627F0606000D2652C /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		1073AB7827F067A600D2652C /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		109D398427EF97AC00BC76D9 /* SpotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		109D398727EF97AC00BC76D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		109D398B27EF97AC00BC76D9 /* TitleBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBarController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				1073AB6B27F04DD100D2652C /* Container.swift */,
 				1073AB7427F05F1900D2652C /* HomeController.swift */,
 				1073AB7627F0606000D2652C /* MenuBar.swift */,
+				1073AB7827F067A600D2652C /* PlayListCell.swift */,
 				1073AB6F27F0501D00D2652C /* Extensions */,
 				109D399B27EF985500BC76D9 /* Files */,
 			);
@@ -167,6 +170,7 @@
 			files = (
 				109D398C27EF97AC00BC76D9 /* TitleBarController.swift in Sources */,
 				1073AB7127F057A300D2652C /* UIColor+Extensions.swift in Sources */,
+				1073AB7927F067A600D2652C /* PlayListCell.swift in Sources */,
 				1073AB7727F0606000D2652C /* MenuBar.swift in Sources */,
 				1073AB7527F05F1900D2652C /* HomeController.swift in Sources */,
 				1073AB6C27F04DD100D2652C /* Container.swift in Sources */,
