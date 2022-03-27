@@ -98,8 +98,12 @@ extension HomeController: UICollectionViewDelegateFlowLayout {
                                    withVelocity velocity: CGPoint,
                                    targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
-        let index = targetContentOffset.pointee.x / view.frame.width
-        menuBar.selectItem(at: Int(index))
+//        let index = targetContentOffset.pointee.x / view.frame.width
+//        menuBar.selectItem(at: Int(index))
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        menuBar.scrollIndicator(to: scrollView.contentOffset)
     }
 }
 

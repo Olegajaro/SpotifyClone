@@ -18,7 +18,15 @@ class MenuBar: UIView {
     private let albumsButton: UIButton!
     private let buttons: [UIButton]!
     
+    let indicator = UIView()
+    
+    var indicatorLeading: NSLayoutConstraint?
+    var indicatorTrailing: NSLayoutConstraint?
+    
     weak var delegate: MenuBarDelegate?
+    
+    let leadPadding: CGFloat = 16
+    let buttonSpace: CGFloat = 36
     
     override init(frame: CGRect) {
         playlistsButton = makeButton(withText: "Playlists")
@@ -40,6 +48,7 @@ class MenuBar: UIView {
                                   for: .primaryActionTriggered)
         
         setAlpha(for: playlistsButton)
+        styleIndicator()
         layout()
     }
     
@@ -47,25 +56,46 @@ class MenuBar: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private func styleIndicator() {
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.backgroundColor = .spotifyGreen
+    }
+    
     private func layout() {
         addSubview(playlistsButton)
         addSubview(artistsButton)
         addSubview(albumsButton)
+        addSubview(indicator)
         
         NSLayoutConstraint.activate([
+            // Buttons
             playlistsButton.topAnchor.constraint(equalTo: topAnchor),
             playlistsButton.leadingAnchor.constraint(
-                equalTo: leadingAnchor, constant: 16
+                equalTo: leadingAnchor, constant: leadPadding
             ),
             artistsButton.topAnchor.constraint(equalTo: topAnchor),
             artistsButton.leadingAnchor.constraint(
-                equalTo: playlistsButton.trailingAnchor, constant: 32
+                equalTo: playlistsButton.trailingAnchor, constant: buttonSpace
             ),
             albumsButton.topAnchor.constraint(equalTo: topAnchor),
             albumsButton.leadingAnchor.constraint(
-                equalTo: artistsButton.trailingAnchor, constant: 32
-            )
+                equalTo: artistsButton.trailingAnchor, constant: buttonSpace
+            ),
+            
+            // bar indicator
+            indicator.bottomAnchor.constraint(equalTo: bottomAnchor),
+            indicator.heightAnchor.constraint(equalToConstant: 3)
         ])
+        
+        indicatorLeading = indicator.leadingAnchor.constraint(
+            equalTo: playlistsButton.leadingAnchor
+        )
+        indicatorTrailing = indicator.trailingAnchor.constraint(
+            equalTo: playlistsButton.trailingAnchor
+        )
+        
+        indicatorLeading?.isActive = true
+        indicatorTrailing?.isActive = true
     }
 }
 
@@ -84,7 +114,7 @@ extension MenuBar {
     }
 }
 
-// MARK: - MenuBar Intetactions
+// MARK: - MenuBar Interactions
 extension MenuBar {
     
     func selectItem(at index: Int) {
@@ -118,6 +148,108 @@ extension MenuBar {
         albumsButton.alpha = 0.5
         
         button.alpha = 1.0
+    }
+    
+    func scrollIndicator(to contentOffset: CGPoint) {
+        let index = Int(contentOffset.x / frame.width)
+        let atScrollStart = Int(contentOffset.x) % Int(frame.width) == 0
+        
+        if atScrollStart {
+            return
+        }
+        
+        // determine percent scrolled relative to index
+        let percentScrolled: CGFloat
+        switch index {
+        case 0:
+            percentScrolled = contentOffset.x / frame.width - 0
+        case 1:
+            percentScrolled = contentOffset.x / frame.width - 1
+        case 2:
+            percentScrolled = contentOffset.x / frame.width - 2
+        default:
+            percentScrolled = contentOffset.x / frame.width
+        }
+        
+        // determine buttons
+        var fromButton: UIButton
+        var toButton: UIButton
+        
+        switch index {
+        case 2:
+            fromButton = buttons[index]
+            toButton = buttons[index - 1]
+        default:
+            fromButton = buttons[index]
+            toButton = buttons[index + 1]
+        }
+        
+        // animate alpha of buttons
+        switch index {
+        case 2:
+            break
+        default:
+            fromButton.alpha = fmax(0.5, (1 - percentScrolled))
+            toButton.alpha = fmax(0.5, percentScrolled)
+        }
+        
+        // determine width
+        let fromWidth = fromButton.frame.width
+        let toWidth = toButton.frame.width
+        
+        let sectionWidth: CGFloat
+        switch index {
+        case 0:
+            sectionWidth = leadPadding + fromWidth + buttonSpace
+        default:
+            sectionWidth = fromWidth + buttonSpace
+        }
+        
+        // normalize x scroll
+        let sectionFraction = sectionWidth / frame.width
+        let x = contentOffset.x * sectionFraction
+        
+        let buttonWidthDiff = fromWidth - toWidth
+        let widthOffset = buttonWidthDiff * percentScrolled
+        
+        // determine leading y
+        let y: CGFloat
+        switch index {
+        case 0:
+            if x < leadPadding {
+                y = x
+            } else {
+                y = x - leadPadding * percentScrolled
+            }
+        case 1:
+            y = x + 13
+        case 2:
+            y = x
+        default:
+            y = x
+        }
+        
+        // Note. 13 is button width difference between Playlists and Artists button
+        // from previous index. Hard coded for now.
+        
+        indicatorLeading?.constant = y
+        
+        // determine trailing y
+        let yTrailing: CGFloat
+        switch index {
+        case 0:
+            yTrailing = y - widthOffset
+        case 1:
+            yTrailing = y - widthOffset - leadPadding
+        case 2:
+            yTrailing = y - widthOffset - leadPadding / 2
+        default:
+            yTrailing = y - widthOffset - leadPadding
+        }
+        
+        indicatorTrailing?.constant = yTrailing
+        
+        print("DEBUG: \(index) percentScrolled = \(percentScrolled)")
     }
 }
 
