@@ -150,6 +150,7 @@ extension MenuBar {
         button.alpha = 1.0
     }
     
+    // MARK: - Make Indicator
     func scrollIndicator(to contentOffset: CGPoint) {
         let index = Int(contentOffset.x / frame.width)
         let atScrollStart = Int(contentOffset.x) % Int(frame.width) == 0
@@ -249,17 +250,8 @@ extension MenuBar {
         
         indicatorTrailing?.constant = yTrailing
         
-        print("DEBUG: \(index) percentScrolled = \(percentScrolled)")
+//        print("DEBUG: \(index) percentScrolled = \(percentScrolled)")
     }
 }
 
-func makeButton(withText text: String) -> UIButton {
-    let button = UIButton(type: .system)
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.tintColor = .label
-    button.setTitle(text, for: .normal)
-    button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
-    button.titleLabel?.adjustsFontSizeToFitWidth = true
-    
-    return button
-}
+

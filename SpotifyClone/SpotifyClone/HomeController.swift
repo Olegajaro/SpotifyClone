@@ -24,13 +24,14 @@ class HomeController: UIViewController {
                                 forCellWithReuseIdentifier: playlistCellId)
         collectionView.backgroundColor = .spotifyBlack
         collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.dataSource = self
         collectionView.delegate = self
         
         return collectionView
     }()
     
-    let colors: [UIColor] = [.systemRed, .systemBlue, .systemTeal]
+    private let musics: [[Track]] = [playlists, artists, albums]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +70,7 @@ class HomeController: UIViewController {
 extension HomeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return colors.count
+        return musics.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -79,7 +80,7 @@ extension HomeController: UICollectionViewDataSource {
             withReuseIdentifier: playlistCellId, for: indexPath
         ) as! PlayListCell
         
-        cell.backgroundColor = colors[indexPath.item]
+        cell.tracks = musics[indexPath.item]
         
         return cell
     }

@@ -33,8 +33,8 @@ class TitleBarController: UIViewController {
     private let container = Container()
     
     private let viewControllers: [UIViewController] = [
-        MusicViewController(),
-        PodcastViewController()
+        HomeController(),
+        HomeController()
     ]
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {

@@ -18,6 +18,8 @@
 		109D399127EF97AC00BC76D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 109D399027EF97AC00BC76D9 /* Assets.xcassets */; };
 		109D399427EF97AC00BC76D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 109D399227EF97AC00BC76D9 /* LaunchScreen.storyboard */; };
 		109D399D27EF9DB400BC76D9 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109D399C27EF9DB400BC76D9 /* UIFont+Extensions.swift */; };
+		109DB62527F0E1BD0072B918 /* Factories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109DB62427F0E1BD0072B918 /* Factories.swift */; };
+		109DB62727F0E8800072B918 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109DB62627F0E8800072B918 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		109D399327EF97AC00BC76D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		109D399527EF97AC00BC76D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		109D399C27EF9DB400BC76D9 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		109DB62427F0E1BD0072B918 /* Factories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factories.swift; sourceTree = "<group>"; };
+		109DB62627F0E8800072B918 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				1073AB7427F05F1900D2652C /* HomeController.swift */,
 				1073AB7627F0606000D2652C /* MenuBar.swift */,
 				1073AB7827F067A600D2652C /* PlayListCell.swift */,
+				109DB62427F0E1BD0072B918 /* Factories.swift */,
+				109DB62627F0E8800072B918 /* Data.swift */,
 				1073AB6F27F0501D00D2652C /* Extensions */,
 				109D399B27EF985500BC76D9 /* Files */,
 			);
@@ -172,10 +178,12 @@
 				1073AB7127F057A300D2652C /* UIColor+Extensions.swift in Sources */,
 				1073AB7927F067A600D2652C /* PlayListCell.swift in Sources */,
 				1073AB7727F0606000D2652C /* MenuBar.swift in Sources */,
+				109DB62727F0E8800072B918 /* Data.swift in Sources */,
 				1073AB7527F05F1900D2652C /* HomeController.swift in Sources */,
 				1073AB6C27F04DD100D2652C /* Container.swift in Sources */,
 				1073AB6E27F04F9200D2652C /* UIViewController+Extensions.swift in Sources */,
 				109D399D27EF9DB400BC76D9 /* UIFont+Extensions.swift in Sources */,
+				109DB62527F0E1BD0072B918 /* Factories.swift in Sources */,
 				109D398827EF97AC00BC76D9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
