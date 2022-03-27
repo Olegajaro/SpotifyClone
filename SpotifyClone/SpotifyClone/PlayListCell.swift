@@ -12,11 +12,11 @@ let trackCellHeight: CGFloat = 72
 // MARK: - Playlists Cell
 class PlayListCell: UICollectionViewCell {
     
-    let trackCellId = "trackId"
+    private let trackCellId = "trackId"
     
     var tracks: [Track]?
     
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 16
         
@@ -92,10 +92,10 @@ struct Track {
 // MARK: - Track Cell
 class TrackCell: UICollectionViewCell {
     
-    let stackView = makeStackView(axis: .vertical)
-    var imageView = UIImageView()
-    var titleLabel = UILabel()
-    var subtitleLable = UILabel()
+    private let stackView = makeStackView(axis: .vertical)
+    private var imageView = UIImageView()
+    private var titleLabel = UILabel()
+    private var subtitleLable = UILabel()
     
     var track: Track? {
         didSet {

@@ -7,24 +7,6 @@
 
 import UIKit
 
-class MusicViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .systemBlue
-    }
-}
-
-class PodcastViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .systemYellow
-    }
-}
-
 class TitleBarController: UIViewController {
 
     private var musicBarButtonItem: UIBarButtonItem!

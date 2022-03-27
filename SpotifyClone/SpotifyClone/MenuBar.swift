@@ -18,15 +18,15 @@ class MenuBar: UIView {
     private let albumsButton: UIButton!
     private let buttons: [UIButton]!
     
-    let indicator = UIView()
+    private let indicator = UIView()
     
-    var indicatorLeading: NSLayoutConstraint?
-    var indicatorTrailing: NSLayoutConstraint?
+    private var indicatorLeading: NSLayoutConstraint?
+    private var indicatorTrailing: NSLayoutConstraint?
     
     weak var delegate: MenuBarDelegate?
     
-    let leadPadding: CGFloat = 16
-    let buttonSpace: CGFloat = 36
+    private let leadPadding: CGFloat = 16
+    private let buttonSpace: CGFloat = 36
     
     override init(frame: CGRect) {
         playlistsButton = makeButton(withText: "Playlists")
