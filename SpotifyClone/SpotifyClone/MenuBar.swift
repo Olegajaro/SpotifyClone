@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol MenuBarDelegate: AnyObject {
+    func didSelectItemAt(index: Int)
+}
+
 class MenuBar: UIView {
     
-    let playlistsButton: UIButton!
-    let artistsButton: UIButton!
-    let albumsButton: UIButton!
-    let buttons: [UIButton]!
+    private let playlistsButton: UIButton!
+    private let artistsButton: UIButton!
+    private let albumsButton: UIButton!
+    private let buttons: [UIButton]!
+    
+    weak var delegate: MenuBarDelegate?
     
     override init(frame: CGRect) {
         playlistsButton = makeButton(withText: "Playlists")
@@ -33,6 +39,7 @@ class MenuBar: UIView {
                                   action: #selector(albumsButtonTapped),
                                   for: .primaryActionTriggered)
         
+        setAlpha(for: playlistsButton)
         layout()
     }
     
@@ -65,15 +72,52 @@ class MenuBar: UIView {
 // MARK: - Actions
 extension MenuBar {
     @objc func playlistsButtonTapped() {
-        
+        delegate?.didSelectItemAt(index: 0)
     }
     
     @objc func artistsButtonTapped() {
-        
+        delegate?.didSelectItemAt(index: 1)
     }
     
     @objc func albumsButtonTapped() {
+        delegate?.didSelectItemAt(index: 2)
+    }
+}
+
+// MARK: - MenuBar Intetactions
+extension MenuBar {
+    
+    func selectItem(at index: Int) {
+        animateIndicator(to: index)
+    }
+    
+    private func animateIndicator(to index: Int) {
+        var button: UIButton
         
+        switch index {
+        case 0:
+            button = playlistsButton
+        case 1:
+            button = artistsButton
+        case 2:
+            button = albumsButton
+        default:
+            button = playlistsButton
+        }
+        
+        setAlpha(for: button)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
+        }
+    }
+    
+    private func setAlpha(for button: UIButton) {
+        playlistsButton.alpha = 0.5
+        artistsButton.alpha = 0.5
+        albumsButton.alpha = 0.5
+        
+        button.alpha = 1.0
     }
 }
 
