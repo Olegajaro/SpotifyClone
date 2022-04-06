@@ -29,6 +29,7 @@
 		107D6F1627FD8CA60016E35A /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1527FD8CA60016E35A /* AudioTrack.swift */; };
 		107D6F1827FD8CC00016E35A /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1727FD8CC00016E35A /* Artist.swift */; };
 		107D6F1A27FD8CD00016E35A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1927FD8CD00016E35A /* UserProfile.swift */; };
+		107D6F1C27FD98F50016E35A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1B27FD98F50016E35A /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		107D6F1527FD8CA60016E35A /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		107D6F1727FD8CC00016E35A /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		107D6F1927FD8CD00016E35A /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		107D6F1B27FD98F50016E35A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				107D6EE727FD846E0016E35A /* Assets.xcassets */,
 				107D6EEC27FD846E0016E35A /* Info.plist */,
+				107D6F1B27FD98F50016E35A /* Extensions.swift */,
 			);
 			path = Files;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				107D6EDF27FD846E0016E35A /* AppDelegate.swift in Sources */,
 				107D6EFC27FD88CE0016E35A /* LibraryViewController.swift in Sources */,
 				107D6F1A27FD8CD00016E35A /* UserProfile.swift in Sources */,
+				107D6F1C27FD98F50016E35A /* Extensions.swift in Sources */,
 				107D6F0A27FD8B950016E35A /* PlaylistViewController.swift in Sources */,
 				107D6F1827FD8CC00016E35A /* Artist.swift in Sources */,
 				107D6EE127FD846E0016E35A /* SceneDelegate.swift in Sources */,
