@@ -30,6 +30,7 @@
 		107D6F1827FD8CC00016E35A /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1727FD8CC00016E35A /* Artist.swift */; };
 		107D6F1A27FD8CD00016E35A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1927FD8CD00016E35A /* UserProfile.swift */; };
 		107D6F1C27FD98F50016E35A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1B27FD98F50016E35A /* Extensions.swift */; };
+		107D6F1E27FDEAF70016E35A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107D6F1D27FDEAF70016E35A /* AuthResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		107D6F1727FD8CC00016E35A /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		107D6F1927FD8CD00016E35A /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		107D6F1B27FD98F50016E35A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		107D6F1D27FDEAF70016E35A /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				107D6F1527FD8CA60016E35A /* AudioTrack.swift */,
 				107D6F1727FD8CC00016E35A /* Artist.swift */,
 				107D6F1927FD8CD00016E35A /* UserProfile.swift */,
+				107D6F1D27FDEAF70016E35A /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				107D6EF827FD881F0016E35A /* TabBarViewController.swift in Sources */,
 				107D6EE327FD846E0016E35A /* HomeViewController.swift in Sources */,
 				107D6F1227FD8C260016E35A /* HapticsManager.swift in Sources */,
+				107D6F1E27FDEAF70016E35A /* AuthResponse.swift in Sources */,
 				107D6F1627FD8CA60016E35A /* AudioTrack.swift in Sources */,
 				107D6F0027FD89220016E35A /* AuthViewController.swift in Sources */,
 				107D6EDF27FD846E0016E35A /* AppDelegate.swift in Sources */,

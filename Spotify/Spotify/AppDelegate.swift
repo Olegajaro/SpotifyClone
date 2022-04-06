@@ -31,9 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         self.window = window
-        
-//        print("DEBUG: \(AuthService.shared.signInURL?.absoluteString)")
-        
+    
         return true
     }
 }
