@@ -7,10 +7,15 @@
 
 import Foundation
 
+//let accessTokenKey = "access-token-key"
+//let redirectUri = URL(string: "HelloSpotify://")
+//let spotifyClientId = "yourClientId"
+//let spotiftClientSecretKey = "yourSecretKey"
+
 let accessTokenKey = "access-token-key"
-let redirectUri = URL(string: "HelloSpotify://")
-let spotifyClientId = "yourClientId"
-let spotiftClientSecretKey = "yourSecretKey"
+let redirectUri = URL(string: "HelloSpotify://")!
+let spotifyClientId = "3d6a6819c1324e2ca90142d997befeec"
+let spotifyClientSecretKey = "26a7c3d63b52446b90c003a583739e99"
 
 /*
  Scopes let you specify exactly what types of data your application wants to
