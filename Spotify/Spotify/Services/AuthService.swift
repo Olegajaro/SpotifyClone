@@ -11,6 +11,7 @@ final class AuthService {
     
     static let shared = AuthService()
     
+    // MARK: - Constants
     struct Constans {
         static let cliendID = "a138ef3c121b46a2914092328c256da9"
         static let clientSecret = "0ad2572a341641959e84a73d5d2e3399"
@@ -26,6 +27,7 @@ final class AuthService {
     
     private init() {}
     
+    // MARK: - Сomputed properties
     public var signInURL: URL? {
         let baseURL = "https://accounts.spotify.com/authorize"
         let stringURL = "\(baseURL)?response_type=code&client_id=\(Constans.cliendID)&scope=\(Constans.arrayScopes.joined(separator: "%20"))&redirect_uri=\(Constans.redirectURI)&show_dialog=TRUE"
@@ -56,6 +58,7 @@ final class AuthService {
         return currentDate.addingTimeInterval(fiveMinute) >= expirationDate
     }
     
+    // MARK: - Exchange code for token
     public func exchangeCodeForToken(code: String,
                                      completion: @escaping (Bool) -> Void) {
          // Get token
@@ -103,6 +106,7 @@ final class AuthService {
         task.resume()
     }
     
+    // MARK: - Refresh token
     func refreshTokenIfNeeded(completion: @escaping (Bool) -> Void) {
         guard shouldRefreshToken else {
             completion(true)
@@ -158,6 +162,7 @@ final class AuthService {
         task.resume()
     }
     
+    // MARK: - Cache token 
     private func cacheToken(result: AuthResponse) {
         UserDefaults.standard.setValue(result.accessToken, forKey: "accessToken")
         

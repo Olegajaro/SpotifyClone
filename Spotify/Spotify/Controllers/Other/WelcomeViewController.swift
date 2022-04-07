@@ -16,16 +16,17 @@ class WelcomeViewController: UIViewController {
         return button
     }()
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "Spotify"
         view.backgroundColor = .systemGreen
         view.addSubview(signInButton)
         
         signInButton.addTarget(self,
-                         action: #selector(didTapSignIn),
-                         for: .touchUpInside)
+                               action: #selector(didTapSignIn),
+                               for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,6 +40,7 @@ class WelcomeViewController: UIViewController {
         )
     }
     
+    // MARK: - Actions
     @objc func didTapSignIn() {
         let vc = AuthViewController()
         vc.completionHandler = { [weak self] success in

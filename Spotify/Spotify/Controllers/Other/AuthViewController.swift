@@ -22,6 +22,7 @@ class AuthViewController: UIViewController {
     
     public var completionHandler: ((Bool) -> Void)?
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +41,7 @@ class AuthViewController: UIViewController {
     }
 }
 
+// MARK: - WKNavigationDelegate
 extension AuthViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView,
                  didStartProvisionalNavigation navigation: WKNavigation!) {
